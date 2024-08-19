@@ -1,33 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import {
-    Avatar,
-    AvatarAddOn,
-    Button,
-    DropdownToggle,
-    NavbarThemeProvider,
-    Navbar,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarToggler,
-    UncontrolledCollapse,
-    UncontrolledDropdown,
-} from './../../../components';
+  Avatar,
+  AvatarAddOn,
+  Button,
+  DropdownToggle,
+  NavbarThemeProvider,
+  Navbar,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarToggler,
+  UncontrolledCollapse,
+  UncontrolledDropdown
+} from './../../../components'
 
-import { NavbarActivityFeed } from './../../../layout/components/NavbarActivityFeed';
-import { NavbarMessages } from './../../../layout/components/NavbarMessages';
-import { NavbarUser } from './../../../layout/components/NavbarUser';
-import { NavbarNavigation } from './NavbarNavigation';
-import { DropdownProfile } from './../Dropdowns/DropdownProfile';
+import { NavbarActivityFeed } from './../../../layout/components/NavbarActivityFeed'
+import { NavbarMessages } from './../../../layout/components/NavbarMessages'
+import { NavbarUser } from './../../../layout/components/NavbarUser'
+import { NavbarNavigation } from './NavbarNavigation'
+import { DropdownProfile } from './../Dropdowns/DropdownProfile'
 
-import { randomAvatar } from './../../../utilities';
+import { randomAvatar } from './../../../utilities'
 
 const NavbarExample = ({ themeColor, themeStyle, navStyle }) => {
-    return (
+  return (
         <NavbarThemeProvider style={ themeStyle } color={ themeColor } className="shadow-sm">
             <Navbar expand="lg" themed>
                 <Link to="/">
@@ -64,21 +64,21 @@ const NavbarExample = ({ themeColor, themeStyle, navStyle }) => {
                                 size="sm"
                                 src={ randomAvatar() }
                                 addOns={[
-                                    <AvatarAddOn.Icon 
+                                    <AvatarAddOn.Icon
                                         className="fa fa-circle"
                                         color="white"
                                         key="avatar-icon-bg"
                                     />,
-                                    <AvatarAddOn.Icon 
+                                    <AvatarAddOn.Icon
                                         className="fa fa-circle"
                                         color="danger"
                                         key="avatar-icon-fg"
                                     />
                                 ]}
-                            /> 
+                            />
                         </DropdownToggle>
-                        <DropdownProfile  
-                            right  
+                        <DropdownProfile
+                            right
                         />
                     </UncontrolledDropdown>
                     { /* END Navbar: Dropdown */ }
@@ -91,24 +91,24 @@ const NavbarExample = ({ themeColor, themeStyle, navStyle }) => {
                 <h1 className="mb-0 h4">
                     Navbar Only
                 </h1>
-                
+
                 <Button color={ themeColor } className="px-4 my-sm-0">
                     Download <i className="fa ml-1 fa-fw fa-download"></i>
                 </Button>
             </Navbar>
         </NavbarThemeProvider>
-    );
+  )
 }
 
 NavbarExample.propTypes = {
-    navStyle: PropTypes.oneOf(['pills', 'accent', 'default']),
-    themeStyle: PropTypes.string,
-    themeColor: PropTypes.string,
-};
+  navStyle: PropTypes.oneOf(['pills', 'accent', 'default']),
+  themeStyle: PropTypes.string,
+  themeColor: PropTypes.string
+}
 NavbarExample.defaultProps = {
-    navStyle: 'default',
-    themeStyle: 'dark',
-    themeColor: 'primary'
-};
+  navStyle: 'default',
+  themeStyle: 'dark',
+  themeColor: 'primary'
+}
 
-export { NavbarExample };
+export { NavbarExample }

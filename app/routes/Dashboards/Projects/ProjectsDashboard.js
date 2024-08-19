@@ -1,6 +1,6 @@
-import React from "react";
-import { faker } from "@faker-js/faker";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { faker } from '@faker-js/faker'
+import { Link } from 'react-router-dom'
 import {
   Container,
   Row,
@@ -16,17 +16,17 @@ import {
   ListGroup,
   ListGroupItem,
   Media,
-  Col,
-} from "./../../../components";
-import { setupPage } from "./../../../components/Layout/setupPage";
+  Col
+} from './../../../components'
+import { setupPage } from './../../../components/Layout/setupPage'
 
-import { HeaderMain } from "../../components/HeaderMain";
+import { HeaderMain } from '../../components/HeaderMain'
 
-import { TasksMedia } from "../../components/ProjectsDashboards/TasksMedia";
-import { TinyDonutChart } from "../../components/ProjectsDashboards/TinyDonutChart";
-import { TinyDonutChartAllProjects } from "../../components/ProjectsDashboards/TinyDonutChartAllProjects";
-import { TimelineMini } from "../../components/Timeline/TimelineMini";
-import { DraggableProjects } from "./DraggableProjects";
+import { TasksMedia } from '../../components/ProjectsDashboards/TasksMedia'
+import { TinyDonutChart } from '../../components/ProjectsDashboards/TinyDonutChart'
+import { TinyDonutChartAllProjects } from '../../components/ProjectsDashboards/TinyDonutChartAllProjects'
+import { TimelineMini } from '../../components/Timeline/TimelineMini'
+import { DraggableProjects } from './DraggableProjects'
 
 const ProjectsDashboard = () => (
   <Container>
@@ -289,8 +289,8 @@ const ProjectsDashboard = () => (
       </Col>
     </Row>
   </Container>
-);
+)
 
 export default setupPage({
-  pageTitle: "Projects Dashboard",
-})(ProjectsDashboard);
+  pageTitle: 'Projects Dashboard'
+})(ProjectsDashboard)
