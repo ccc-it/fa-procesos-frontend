@@ -1,9 +1,9 @@
-import React from "react";
-import { faker } from "@faker-js/faker";
+import React from 'react'
+import { faker } from '@faker-js/faker'
 
-import { Avatar, AvatarAddOn } from "./../../components";
+import { Avatar, AvatarAddOn } from './../../components'
 
-import { randomArray, randomAvatar } from "./../../utilities";
+import { randomArray, randomAvatar, getCurrentUser } from './../../utilities'
 
 const Profile = () => {
   const avatar = [
@@ -18,7 +18,7 @@ const Profile = () => {
         color="white"
         key="avatar-icon-fg"
         small
-      />,
+      />
     ],
     [
       <AvatarAddOn.Icon
@@ -31,7 +31,7 @@ const Profile = () => {
         color="white"
         key="avatar-icon-fg"
         small
-      />,
+      />
     ],
     [
       <AvatarAddOn.Icon
@@ -44,7 +44,7 @@ const Profile = () => {
         color="white"
         key="avatar-icon-fg"
         small
-      />,
+      />
     ],
     [
       <AvatarAddOn.Icon
@@ -57,7 +57,7 @@ const Profile = () => {
         color="white"
         key="avatar-icon-fg"
         small
-      />,
+      />
     ],
     [
       <AvatarAddOn.Icon
@@ -70,9 +70,9 @@ const Profile = () => {
         color="white"
         key="avatar-icon-fg"
         small
-      />,
-    ],
-  ];
+      />
+    ]
+  ]
   return (
     <React.Fragment>
       <div className="d-flex justify-content-center my-3">
@@ -85,22 +85,22 @@ const Profile = () => {
               color="white"
               key="avatar-icon-white-bg"
             />,
-            ...randomArray(avatar),
+            ...randomArray(avatar)
           ]}
         />
       </div>
       <div className="mb-4 text-center">
         <a className="h6 text-decoration-none" href="#">
-          {faker.person.firstName()} {faker.person.lastName()}
+          {getCurrentUser().firstName} {getCurrentUser().lastName}
         </a>
-        <div className="text-center mt-2">{faker.person.jobTitle()}</div>
+        <div className="text-center mt-2">{getCurrentUser().jobTitle}</div>
         <div className="text-center">
           <i className="fa fa-map-marker mr-1"></i>
           {faker.location.city()}
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export { Profile };
+export { Profile }

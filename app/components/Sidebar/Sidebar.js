@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import OuterClick from './../OuterClick';
-import { withPageConfig } from './../Layout';
-import { SidebarContent } from './SidebarContent';
+import OuterClick from './../OuterClick'
+import { withPageConfig } from './../Layout'
+import { SidebarContent } from './SidebarContent'
 
 const Sidebar = (props) => (
     <React.Fragment>
@@ -11,7 +11,7 @@ const Sidebar = (props) => (
         <OuterClick
             active={
                 !props.pageConfig.sidebarCollapsed && (
-                    props.pageConfig.screenSize === 'xs' ||
+                  props.pageConfig.screenSize === 'xs' ||
                     props.pageConfig.screenSize === 'sm' ||
                     props.pageConfig.screenSize === 'md'
                 )
@@ -21,18 +21,18 @@ const Sidebar = (props) => (
             <SidebarContent { ...props } />
         </OuterClick>
     </React.Fragment>
-);
+)
 
 Sidebar.propTypes = {
-    children: PropTypes.node,
-    slim: PropTypes.bool,
-    collapsed: PropTypes.bool,
-    animationsDisabled: PropTypes.bool,
-    pageConfig: PropTypes.object
-};
+  children: PropTypes.node,
+  slim: PropTypes.bool,
+  collapsed: PropTypes.bool,
+  animationsDisabled: PropTypes.bool,
+  pageConfig: PropTypes.object
+}
 
-const cfgSidebar = withPageConfig(Sidebar);
+const cfgSidebar = withPageConfig(Sidebar)
 
 export {
-    cfgSidebar as Sidebar
-};
+  cfgSidebar as Sidebar
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Row, Col, Button } from '../../../components'
-import DatePicker, { setDefaultLocale } from 'react-datepicker';
-import { ButtonInput } from './components/ButtonInput';
+import { Container, Row, Col, Button, Accordion, CardText } from '../../../components'
+import DatePicker, { setDefaultLocale } from 'react-datepicker'
+import { ButtonInput } from './components/ButtonInput'
 import moment from 'moment'
 
 import {
@@ -10,7 +10,7 @@ import {
 import { HeaderMain } from '../../components/HeaderMain'
 // import { data } from '../../../Apis/contabilidad_ventas_data.json'
 
-setDefaultLocale('es');
+setDefaultLocale('es')
 
 export const ContabilidadVentas = () => {
   const [tableData, setTableData] = useState([])
@@ -35,9 +35,9 @@ export const ContabilidadVentas = () => {
     fetchData(moment(startDate).format('YYYY-MM-DD'), moment(endDate).format('YYYY-MM-DD'))
   }
 
-  const fetchData = async (startDate, endDate) => {// TODO: 1) pasar esto a una carpeta de conexion con apis para ser mas ordenado, 2) Migrar a axios
+  const fetchData = async (startDate, endDate) => { // TODO: 1) pasar esto a una carpeta de conexion con apis para ser mas ordenado, 2) Migrar a axios
     try {
-      const response = await fetch(`http://localhost:5000/contabilidad/ventas?fechaInicial=${startDate}&fechaFinal=${endDate}`) // esto esta corriendo en un servidor local
+      const response = await fetch('http://127.0.0.1:5500/app/Apis/contabilidad_ventas_data.json') // esto esta corriendo en un servidor local
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }
@@ -84,11 +84,22 @@ export const ContabilidadVentas = () => {
       <Button style={{ marginLeft: 5 }} color="primary" onClick={() => handleAPICall()}><i className="fa fa-search mr-2"></i>Buscar</Button>
       {
         loading // hasta que esta cargado y todos los elementos tiene datos mostramos el componente
-          ? <div>
+          ? <div style={{ marginTop: 20 }}>
             <i className="fa fa-spinner fa-spin" style={{ fontSize: '2em', color: '#1EB7FF', marginRight: '8px' }}></i>
             Por Favor Espera. Cargando...
           </div>
-          : (tableData.length > 0 && columNames.length > 0 && columFields.length > 0) && <Row className="mb-5">
+          : error
+            ? <div style={{ marginTop: 20 }}>
+              <Accordion className="mb-2 bg-danger text-white" initialOpen>
+              <Accordion.Header className="text-white">
+              Oh snap! You got an error!
+              </Accordion.Header>
+              <Accordion.Body>
+                <CardText>No se puedieron cargar los datos {error}</CardText>
+              </Accordion.Body>
+            </Accordion>
+          </div>
+            : (tableData.length > 0 && columNames.length > 0 && columFields.length > 0) && <Row className="mb-5">
             <Col>
               <TableData tableData={tableData} columNames={columNames} columFields={columFields} />
             </Col>

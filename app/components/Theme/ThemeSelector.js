@@ -47,7 +47,7 @@ class ThemeSelector extends React.Component {
 
     this.state = {
       isActive: false,
-      initialStyle: 'Dark',
+      initialStyle: '',
       initialColor: ''
     }
   }

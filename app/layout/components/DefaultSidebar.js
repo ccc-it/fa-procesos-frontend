@@ -10,7 +10,7 @@ import { SidebarMiddleNav } from './SidebarMiddleNav'
 
 import { SidebarTopA } from '../../routes/components/Sidebar/SidebarTopA'
 import { SidebarBottomA } from '../../routes/components/Sidebar/SidebarBottomA'
-import { LogoThemed } from '../../routes/components/LogoThemed/LogoThemed'
+import { MainLogo } from '../../routes/components/LogoThemed/LogoThemed'
 
 export const DefaultSidebar = () => (
     <Sidebar>
@@ -26,7 +26,7 @@ export const DefaultSidebar = () => (
         <Sidebar.HideSlim>
             <Sidebar.Section>
                 <Link to="/" className="sidebar__brand">
-                    <LogoThemed checkBackground />
+                    <MainLogo/>
                 </Link>
             </Sidebar.Section>
         </Sidebar.HideSlim>

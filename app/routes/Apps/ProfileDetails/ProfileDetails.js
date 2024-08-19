@@ -1,6 +1,6 @@
-import React from "react";
-import { faker } from "@faker-js/faker";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { faker } from '@faker-js/faker'
+import { Link } from 'react-router-dom'
 
 import {
   Container,
@@ -22,19 +22,19 @@ import {
   Badge,
   Nav,
   NavItem,
-  UncontrolledTabs,
-} from "./../../../components";
-import { HeaderMain } from "../../components/HeaderMain";
+  UncontrolledTabs
+} from './../../../components'
+import { HeaderMain } from '../../components/HeaderMain'
 
-import { Profile } from "../../components/Profile";
-import { ProfileOverviewCard } from "../../components/Profile/ProfileOverviewCard";
-import { DlRowContacts } from "../../components/Profile/DlRowContacts";
-import { DlRowAddress } from "../../components/Profile/DlRowAddress";
-import { ChatLeft } from "../../components/Chat/ChatLeft";
-import { ChatRight } from "../../components/Chat/ChatRight";
-import { ChatCardFooter } from "../../components/Chat/ChatCardFooter";
-import { TrTableMessages } from "./components/TrTableMessages";
-import { TimelineDefault } from "../../components/Timeline/TimelineDefault";
+import { Profile } from '../../components/Profile'
+import { ProfileOverviewCard } from '../../components/Profile/ProfileOverviewCard'
+import { DlRowContacts } from '../../components/Profile/DlRowContacts'
+import { DlRowAddress } from '../../components/Profile/DlRowAddress'
+import { ChatLeft } from '../../components/Chat/ChatLeft'
+import { ChatRight } from '../../components/Chat/ChatRight'
+import { ChatCardFooter } from '../../components/Chat/ChatCardFooter'
+import { TrTableMessages } from './components/TrTableMessages'
+import { TimelineDefault } from '../../components/Timeline/TimelineDefault'
 
 const ProfileDetails = () => (
   <React.Fragment>
@@ -146,7 +146,7 @@ const ProfileDetails = () => (
               </NavItem>
               <NavItem>
                 <UncontrolledTabs.NavLink tabId="messages">
-                  Messages{" "}
+                  Messages{' '}
                   <Badge pill color="secondary" className="ml-2">
                     5
                   </Badge>
@@ -353,6 +353,6 @@ const ProfileDetails = () => (
       {/* END Content */}
     </Container>
   </React.Fragment>
-);
+)
 
-export default ProfileDetails;
+export default ProfileDetails

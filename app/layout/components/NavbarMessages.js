@@ -1,7 +1,7 @@
-import React from "react";
-import { faker } from "@faker-js/faker";
-import _ from "lodash";
-import PropTypes from "prop-types";
+import React from 'react'
+import { faker } from '@faker-js/faker'
+import _ from 'lodash'
+import PropTypes from 'prop-types'
 
 import {
   Avatar,
@@ -16,10 +16,10 @@ import {
   InputGroup,
   Input,
   InputGroupAddon,
-  Button,
-} from "./../../components";
+  Button
+} from './../../components'
 
-const messagesColors = ["text-success", "text-danger", "text-warning"];
+const messagesColors = ['text-success', 'text-danger', 'text-warning']
 
 const NavbarMessages = (props) => (
   <UncontrolledDropdown nav inNavbar {...props}>
@@ -95,10 +95,10 @@ const NavbarMessages = (props) => (
       </ExtendedDropdown.Section>
     </ExtendedDropdown>
   </UncontrolledDropdown>
-);
+)
 NavbarMessages.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
-};
+  style: PropTypes.object
+}
 
-export { NavbarMessages };
+export { NavbarMessages }

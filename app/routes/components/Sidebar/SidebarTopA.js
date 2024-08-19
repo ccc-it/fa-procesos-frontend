@@ -1,6 +1,6 @@
-import React from "react";
-import { faker } from "@faker-js/faker";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { faker } from '@faker-js/faker'
+import { Link } from 'react-router-dom'
 
 import {
   Sidebar,
@@ -9,14 +9,16 @@ import {
   AvatarAddOn,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-} from "./../../../components";
-import { randomAvatar } from "./../../../utilities";
+  DropdownItem
+} from './../../../components'
+import { randomAvatar, getCurrentUser } from './../../../utilities'
 
-const avatarImg = randomAvatar();
+const avatarImg = randomAvatar()
 
-const SidebarTopA = () => (
-  <React.Fragment>
+const SidebarTopA = () => {
+  const { firstName, lastName, jobTitle } = getCurrentUser()
+
+  return (<React.Fragment>
     {/* START: Sidebar Default */}
     <Sidebar.HideSlim>
       <Sidebar.Section className="pt-0">
@@ -35,7 +37,7 @@ const SidebarTopA = () => (
                   className="fa fa-circle"
                   color="success"
                   key="avatar-icon-fg"
-                />,
+                />
               ]}
             />
           </Sidebar.HideSlim>
@@ -46,12 +48,12 @@ const SidebarTopA = () => (
             color="link"
             className="pl-0 pb-0 btn-profile sidebar__link"
           >
-            {faker.person.firstName()} {faker.person.lastName()}
+            {firstName} {lastName}
             <i className="fa fa-angle-down ml-2"></i>
           </DropdownToggle>
           <DropdownMenu persist>
             <DropdownItem header>
-              {faker.person.firstName()} {faker.person.lastName()}
+              {firstName} {lastName}
             </DropdownItem>
             <DropdownItem divider />
             <DropdownItem tag={Link} to="/apps/profile-details">
@@ -71,7 +73,7 @@ const SidebarTopA = () => (
           </DropdownMenu>
         </UncontrolledButtonDropdown>
         <div className="small sidebar__link--muted">
-          {faker.person.jobTitle()}
+          {jobTitle}
         </div>
       </Sidebar.Section>
     </Sidebar.HideSlim>
@@ -93,13 +95,14 @@ const SidebarTopA = () => (
               className="fa fa-circle"
               color="success"
               key="avatar-icon-fg"
-            />,
+            />
           ]}
         />
       </Sidebar.Section>
     </Sidebar.ShowSlim>
     {/* END: Sidebar Slim */}
   </React.Fragment>
-);
+  )
+}
 
-export { SidebarTopA };
+export { SidebarTopA }
