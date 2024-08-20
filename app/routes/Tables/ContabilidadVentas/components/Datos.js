@@ -12,16 +12,14 @@ import _ from 'lodash'
 import {
   Button,
   CustomInput,
-  ButtonGroup,
+  ButtonGroup
 } from '../../../../components'
-
 
 import { CustomExportCSV } from './CustomExportButton'
 import { CustomSearch } from './CustomSearch'
 import {
-  buildCustomTextFilter,
+  buildCustomTextFilter
 } from './../filters'
-
 
 const sortCaret = (order) => {
   if (!order) return <i className="fa fa-fw fa-sort text-muted"></i>
@@ -29,7 +27,7 @@ const sortCaret = (order) => {
 }
 
 export class TableData extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -38,13 +36,13 @@ export class TableData extends React.Component {
     }
   }
 
-  addFilterFunction(filter) {
+  addFilterFunction (filter) {
     this.setState((prevState) => ({
       filters: [...prevState.filters, filter]
     }))
   }
 
-  handleSelect(row, isSelected) {
+  handleSelect (row, isSelected) {
     if (isSelected) {
       this.setState({ selected: [...this.state.selected, row.id] })
     } else {
@@ -54,7 +52,7 @@ export class TableData extends React.Component {
     }
   }
 
-  handleSelectAll(isSelected, rows) {
+  handleSelectAll (isSelected, rows) {
     if (isSelected) {
       this.setState({ selected: _.map(rows, 'id') })
     } else {
@@ -62,13 +60,13 @@ export class TableData extends React.Component {
     }
   }
 
-  handleResetFilters() {
-    this.state.filters.map((func) => {
+  handleResetFilters () {
+    this.state.filters.map((func) =>
       func('')
-    })
+    )
   }
 
-  createColumnDefinitions() {
+  createColumnDefinitions () {
     const nombresColumnas = this.props.columNames || []
     const campos = this.props.columFields || []
 
@@ -96,8 +94,7 @@ export class TableData extends React.Component {
     return mapeoCampos
   }
 
-
-  render() {
+  render () {
     const columnDefs = this.createColumnDefinitions()
     const paginationDef = paginationFactory({
       paginationSize: 5,
@@ -145,7 +142,7 @@ export class TableData extends React.Component {
         {(props) => (
           <React.Fragment>
             <div className="d-flex justify-content-end align-items-center mb-2">
-             
+
               <div className="d-flex ml-auto">
                 <CustomSearch className="mr-2" {...props.searchProps} />
                 <ButtonGroup>
@@ -162,7 +159,7 @@ export class TableData extends React.Component {
               </div>
             </div>
             <BootstrapTable
-              classes="table-responsive"
+              classes="table-responsive-lg"
               pagination={paginationDef}
               bordered={false}
               filter={filterFactory()}

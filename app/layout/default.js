@@ -39,9 +39,7 @@ class AppLayout extends React.Component {
             <ThemeProvider initialStyle="dark" initialColor="danger">
                 <Layout sidebarSlim favIcons={ favIcons }>
                     { /* --------- Navbar ----------- */ }
-                    <Layout.Navbar>
-                        <RoutedNavbars />
-                    </Layout.Navbar>
+                   
                     { /* -------- Sidebar ------------ */ }
                     <Layout.Sidebar>
                         <RoutedSidebars />

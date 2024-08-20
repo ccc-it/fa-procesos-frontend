@@ -66,10 +66,10 @@ export const ContabilidadVentas = () => {
   }
 
   return (
-    <Container>
+    <Container className="mx-0">
       <HeaderMain
         title="Contabilidad - Ventas"
-        className="mb-5 mt-4"
+        className="mb-5 mt-2"
       />
       <DatePicker
         customInput={<ButtonInput />}

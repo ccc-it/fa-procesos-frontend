@@ -56,7 +56,7 @@ const MainLogo = ({ className, ...otherProps }) => (
     {
         ({ style, color }) => (
             <img
-                style={{ width: '300px' }}
+                style={{ width: 200 }}
                 src={logos.fv_white}
                 className={ classNames('d-block', className) }
                 alt="Main Logo"
