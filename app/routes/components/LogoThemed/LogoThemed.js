@@ -37,10 +37,11 @@ const LogoThemed = ({ checkBackground, className, ...otherProps }) => (
     {
         ({ style, color }) => (
             <img
-                src={
-                    checkBackground
+                style={{ height: 100 }}
+                src={ logos.fv_red
+                    /* checkBackground
                       ? getLogoUrlBackground(style, color)
-                      : getLogoUrl(style, color)
+                      : getLogoUrl(style, color) */
                 }
                 className={ classNames('d-block', className) }
                 alt="Airframe Logo"
