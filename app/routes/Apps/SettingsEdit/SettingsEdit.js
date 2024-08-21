@@ -1,30 +1,30 @@
-import React from 'react';
+import React from 'react'
 
-import { 
-    Container,
-    Row,
-    Col,
-    Input,
-    Card,
-    Button,
-    CardBody,
-    CardFooter,
-    FormText,
-    CardTitle,
-    CustomInput,
-    Label,
-    FormGroup,
-    Form
-} from './../../../components';
+import {
+  Container,
+  Row,
+  Col,
+  Input,
+  Card,
+  Button,
+  CardBody,
+  CardFooter,
+  FormText,
+  CardTitle,
+  CustomInput,
+  Label,
+  FormGroup,
+  Form
+} from './../../../components'
 
-import { HeaderMain } from "../../components/HeaderMain";
-import { ProfileLeftNav } from "../../components/Profile/ProfileLeftNav";
-import { ProfileHeader } from "../../components/Profile/ProfileHeader";
+import { HeaderMain } from '../../components/HeaderMain'
+import { ProfileLeftNav } from '../../components/Profile/ProfileLeftNav'
+import { ProfileHeader } from '../../components/Profile/ProfileHeader'
 
 const SettingsEdit = () => (
     <React.Fragment>
         <Container>
-            <HeaderMain 
+            <HeaderMain
                 title="Settings Edit"
                 className="mb-5 mt-4"
             />
@@ -49,7 +49,7 @@ const SettingsEdit = () => (
                                         Monthly Newsletter
                                     </Label>
                                     <p className="mb-2">
-                                        Do you want receive our monthly newsletter about 
+                                        Do you want receive our monthly newsletter about
                                         new products and offers?
                                     </p>
                                     <CustomInput type="checkbox" id="notifyMe" label="Notify Me" inline />
@@ -94,7 +94,6 @@ const SettingsEdit = () => (
                                 </FormGroup>
                                 { /* END Input */}
 
-                            
                             </Form>
                             { /* END Form */}
                         </CardBody>
@@ -109,6 +108,6 @@ const SettingsEdit = () => (
 
         </Container>
     </React.Fragment>
-);
+)
 
-export default SettingsEdit;
+export default SettingsEdit

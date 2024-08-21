@@ -1,3 +1,3 @@
-import { ContabilidadVentas } from './ContabilidadVentas';
+import { ContabilidadVentas } from './ContabilidadVentas'
 
-export default ContabilidadVentas;
+export default ContabilidadVentas

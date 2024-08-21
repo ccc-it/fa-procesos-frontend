@@ -332,7 +332,7 @@ const Accordions = () => (
               </Accordion.Body>
             </Accordion>
 
-            <Accordion className="mb-2 bg-danger text-white">
+            <Accordion className="mb-2 bg-danger text-white" initialOpen>
               <Accordion.Header className="text-white">
                 Danger Card #3
               </Accordion.Header>

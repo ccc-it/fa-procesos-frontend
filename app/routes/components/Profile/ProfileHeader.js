@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { faker } from "@faker-js/faker";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { faker } from '@faker-js/faker'
 
-import { Badge, Media, Avatar, AvatarAddOn } from "./../../../components";
-import { randomAvatar } from "./../../../utilities";
+import { Badge, Media, Avatar, AvatarAddOn } from './../../../components'
+import { randomAvatar, getCurrentUser } from './../../../utilities'
 
 const ProfileHeader = () => (
   <React.Fragment>
@@ -24,15 +24,15 @@ const ProfileHeader = () => (
               className="fa fa-circle"
               color="success"
               key="avatar-icon-fg"
-            />,
+            />
           ]}
         />
       </Media>
       <Media body>
         <h5 className="mb-1 mt-0">
           <Link to="/apps/profile-details">
-            {faker.person.firstName()} {faker.person.lastName()}
-          </Link>{" "}
+            {getCurrentUser().firstName} {getCurrentUser().lastName}
+          </Link>{' '}
           <span className="text-muted mx-1"> / </span> Profile Edit
         </h5>
         <Badge color="primary" pill className="mr-2">
@@ -43,6 +43,6 @@ const ProfileHeader = () => (
     </Media>
     {/* END Header */}
   </React.Fragment>
-);
+)
 
-export { ProfileHeader };
+export { ProfileHeader }
