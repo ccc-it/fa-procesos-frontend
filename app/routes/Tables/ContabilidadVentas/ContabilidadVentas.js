@@ -71,16 +71,21 @@ export const ContabilidadVentas = () => {
         title="Contabilidad - Ventas"
         className="mb-5 mt-2"
       />
-      <DatePicker
-        customInput={<ButtonInput />}
-        selected={startDate}
-        onChange={_handleChangeStart}
-      />
-      <DatePicker
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+          <DatePicker
+            customInput={<ButtonInput />}
+            selected={startDate}
+            onChange={_handleChangeStart}
+          />
+          </div>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+          <DatePicker
         customInput={<ButtonInput />}
         selected={endDate}
         onChange={_handleChangeEnd}
       />
+        </div>
+
       <Button style={{ marginLeft: 5 }} color="primary" onClick={() => handleAPICall()}><i className="fa fa-search mr-2"></i>Buscar</Button>
       {
         loading // hasta que esta cargado y todos los elementos tiene datos mostramos el componente
